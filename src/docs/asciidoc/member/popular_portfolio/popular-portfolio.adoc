@@ -1,0 +1,17 @@
+== 인기 포트폴리오 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 인기 포트폴리오 랜덤 조회
+'''
+
+==== 요청
+include::{snippets}/popular-portfolio-find-random/http-request.adoc[]
+
+==== 응답
+include::{snippets}/popular-portfolio-find-random/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/popular-portfolio-find-random/response-fields.adoc[]

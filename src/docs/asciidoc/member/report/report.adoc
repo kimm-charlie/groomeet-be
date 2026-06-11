@@ -1,0 +1,20 @@
+==  신고 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 신고
+'''
+
+==== 요청
+include::{snippets}/member-report-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-report-save/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-report-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-report-save/http-response.adoc[]

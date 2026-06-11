@@ -1,0 +1,49 @@
+= 디렉터용 API 문서
+:toc: left
+:toclevels: 2
+:sectlinks:
+:doctype: book
+:source-highlighter: highlightjs
+:toc-title: 목차
+:sectanchors:
+:snippets: ../../../../../build/generated-snippets
+
+++++
+<style>
+.sect2 h3 {  /* API 엔드포인트 제목에 대한 스타일 */
+    color: #2c3e50;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4a90e2;
+    margin: 20px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.separator {  /* 구분선에 대한 스타일 */
+    border-top: 2px solid #eee;
+    margin: 20px 0;
+}
+</style>
+++++
+
+include::director/director_info/director_info.adoc[]
+include::director/director_location_mapping/director-location-mapping.adoc[]
+include::director/director_service_mapping/director-service-mapping.adoc[]
+include::director/portfolio/portfolio.adoc[]
+include::director/service_request/service-request.adoc[]
+include::director/service_estimate/service-estimate.adoc[]
+include::director/service_estimate_template/service-estimate-template.adoc[]
+include::director/chat_room/chat-room.adoc[]
+include::director/director_profile_detail/director-profile-detail.adoc[]
+include::director/notification/notification.adoc[]
+include::director/cash_transaction_history/cash-transaction-history.adoc[]
+include::director/cash/cash.adoc[]
+include::director/member/member.adoc[]
+include::director/service_request/service-request.adoc[]
+include::director/business_registration/business-registration.adoc[]
+include::director/promotion_code/promotion-code.adoc[]
+include::director/banner/banner.adoc[]
+include::director/popup/popup.adoc[]
+include::director/consulting_request/consulting-request.adoc[]
+include::director/consulting_sheet/consulting-sheet.adoc[]

@@ -1,0 +1,23 @@
+== 관리자 채팅 메시지 관리 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 채팅 메시지 조회 (serviceEstimateId로 조회)
+'''
+
+==== 요청
+include::{snippets}/admin-chat-message-find-messages/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-chat-message-find-messages/request-cookies.adoc[]
+
+==== 요청 파라미터
+include::{snippets}/admin-chat-message-find-messages/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-chat-message-find-messages/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-chat-message-find-messages/response-fields.adoc[]

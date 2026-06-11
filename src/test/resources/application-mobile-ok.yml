@@ -1,0 +1,8 @@
+mobile-ok:
+  key-path: key-path
+  secret: secret
+  target-url: target-url
+  script-url: script-url
+  request-url-app: request-url-app
+  return-url-app: return-url-app
+  return-url-web: return-url-web

@@ -1,0 +1,17 @@
+== 팝업 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 팝업 전체 조회
+'''
+
+==== 요청
+include::{snippets}/popup-find-all/http-request.adoc[]
+
+==== 응답
+include::{snippets}/popup-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/popup-find-all/response-fields.adoc[]

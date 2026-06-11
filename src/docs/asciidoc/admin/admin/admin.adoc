@@ -1,0 +1,20 @@
+== 관리자 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 정보 조회
+'''
+
+==== 요청
+include::{snippets}/admin-find-info/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-find-info/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-find-info/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-find-info/response-fields.adoc[]

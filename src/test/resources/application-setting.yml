@@ -1,0 +1,4 @@
+domain: mydomain.com
+
+app:
+  default-profile-image-url: https://motd-prod-s3.s3.ap-northeast-2.amazonaws.com/default/profile_image.png

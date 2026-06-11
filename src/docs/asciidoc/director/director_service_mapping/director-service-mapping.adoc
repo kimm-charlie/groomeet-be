@@ -1,0 +1,83 @@
+== 디렉터 서비스 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 서비스 수정 및 업데이트
+'''
+
+==== 요청
+include::{snippets}/director-service-mapping-update/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-service-mapping-update/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/director-service-mapping-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/director-service-mapping-update/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 특정 디렉터의 전체 서비스 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/director-service-mapping-find-all-for-director/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-service-mapping-find-all-for-director/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/director-service-mapping-find-all-for-director/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-service-mapping-find-all-for-director/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 자주쓰는 제안이 존재하는 디렉터의 전체 서비스 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/director-service-mapping-find-all-for-estimate-template/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-service-mapping-find-all-for-estimate-template/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/director-service-mapping-find-all-for-estimate-template/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-service-mapping-find-all-for-estimate-template/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 디렉터 서비스 활성화 진행률 조회
+'''
+
+==== 요청
+include::{snippets}/director-service-mapping-find-activation-progress/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-service-mapping-find-activation-progress/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/director-service-mapping-find-activation-progress/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-service-mapping-find-activation-progress/response-fields.adoc[]

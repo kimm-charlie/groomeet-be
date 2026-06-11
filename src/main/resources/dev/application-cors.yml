@@ -1,0 +1,4 @@
+cors:
+  allowed:
+    origins: http://localhost:3000, http://localhost:3001, http://localhost:8080, http://localhost:5173, https://motd-test.com, https://app.motd-test.com, https://scert.mobile-ok.com,https://admin.motd-test.com
+    patterns: http://172.30.1.*:3001, http://172.30.1.*:3000

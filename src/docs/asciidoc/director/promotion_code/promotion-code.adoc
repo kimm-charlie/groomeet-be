@@ -1,0 +1,20 @@
+== 프로모션 코드 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 프로모션 코드 저장
+'''
+
+==== 요청
+include::{snippets}/promotion-code-use/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/promotion-code-use/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/promotion-code-use/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/promotion-code-use/http-response.adoc[]

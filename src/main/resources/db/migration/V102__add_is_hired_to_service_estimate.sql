@@ -1,0 +1,6 @@
+ALTER TABLE service_estimate
+    ADD COLUMN is_hired BOOLEAN NOT NULL DEFAULT FALSE;
+
+UPDATE service_estimate
+SET is_hired = TRUE
+WHERE status IN ('ONGOING', 'DIRECTOR_DONE', 'COMPLETED_BY_MEMBER', 'REVIEW_COMPLETED');

@@ -1,0 +1,4 @@
+kakao:
+  rest-api-key: api-key
+  client-secret: redirect-uri
+  redirect-uri: redirect-uri

@@ -1,0 +1,65 @@
+== 디렉터 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 등록
+'''
+
+==== 요청
+include::{snippets}/director-register/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-register/request-cookies.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/director-register/response-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/director-register/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/director-register/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 디렉터 순위 전체 조회 (메인페이지용 4개줌)
+'''
+
+==== 요청
+include::{snippets}/director-rank-main-view/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/director-rank-main-view/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/director-rank-main-view/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-rank-main-view/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 디렉터 순위 전체 조회 (랭킹페이지용 20개씩 줌 페이지네이션)
+'''
+
+==== 요청
+include::{snippets}/director-rank-rank-view/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/director-rank-rank-view/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/director-rank-rank-view/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-rank-rank-view/response-fields.adoc[]

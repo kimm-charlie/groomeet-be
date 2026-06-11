@@ -1,0 +1,8 @@
+kakao:
+  token:
+    url: https://kauth.kakao.com
+  client:
+    url: https://kapi.kakao.com
+apple:
+  client:
+    url: https://appleid.apple.com

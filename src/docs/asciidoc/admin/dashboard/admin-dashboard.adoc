@@ -1,0 +1,20 @@
+== 관리자 대시보드 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 대시보드 조회
+'''
+
+==== 요청
+include::{snippets}/admin-dashboard-find/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-dashboard-find/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-dashboard-find/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-dashboard-find/response-fields.adoc[]

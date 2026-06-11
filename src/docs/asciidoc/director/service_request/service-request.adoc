@@ -1,0 +1,68 @@
+== 요청 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 전체 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/service-request-findAll-for-director/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-findAll-for-director/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/service-request-findAll-for-director/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-request-findAll-for-director/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-request-findAll-for-director/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 상세 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/service-request-findDetail-for-director/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-findDetail-for-director/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/service-request-findDetail-for-director/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-request-findDetail-for-director/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-request-findDetail-for-director/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 특정 요청 숨김 처리
+'''
+
+==== 요청
+include::{snippets}/director-hide-service-request-for-director/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-hide-service-request-for-director/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/director-hide-service-request-for-director/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/director-hide-service-request-for-director/http-response.adoc[]

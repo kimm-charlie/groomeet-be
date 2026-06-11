@@ -1,0 +1,6 @@
+management:
+  endpoints:
+    web:
+      base-path: /internal/metrics
+      exposure:
+        include: prometheus

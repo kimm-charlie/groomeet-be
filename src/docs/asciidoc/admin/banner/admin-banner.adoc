@@ -1,0 +1,113 @@
+== 관리자 배너 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 배너 전체 조회
+'''
+
+==== 요청
+include::{snippets}/admin-banner-find-all/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-banner-find-all/request-cookies.adoc[]
+
+==== 요청 파라미터
+include::{snippets}/admin-banner-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-banner-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-banner-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 배너 상세 조회
+'''
+
+==== 요청
+include::{snippets}/admin-banner-find-detail/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-banner-find-detail/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-banner-find-detail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-banner-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-banner-find-detail/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 배너 등록
+'''
+
+==== 요청
+include::{snippets}/admin-banner-create/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-banner-create/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-banner-create/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-banner-create/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 배너 수정
+'''
+
+==== 요청
+include::{snippets}/admin-banner-update/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-banner-update/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-banner-update/path-parameters.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-banner-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-banner-update/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 배너 삭제
+'''
+
+==== 요청
+include::{snippets}/admin-banner-delete/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-banner-delete/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-banner-delete/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-banner-delete/http-response.adoc[]

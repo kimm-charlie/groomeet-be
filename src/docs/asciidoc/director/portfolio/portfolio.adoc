@@ -1,0 +1,63 @@
+== 포트폴리오 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 포트폴리오 저장
+'''
+
+==== 요청
+include::{snippets}/portfolio-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/portfolio-save/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/portfolio-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/portfolio-save/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 포트폴리오 수정
+'''
+
+==== 요청
+include::{snippets}/portfolio-update/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/portfolio-update/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/portfolio-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/portfolio-update/http-response.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 포트폴리오 삭제
+'''
+
+==== 요청
+include::{snippets}/portfolio-delete/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/portfolio-delete/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/portfolio-delete/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/portfolio-delete/http-response.adoc[]

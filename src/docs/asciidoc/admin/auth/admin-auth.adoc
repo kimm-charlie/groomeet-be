@@ -1,0 +1,38 @@
+== 관리자 로그인 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 로그인
+'''
+
+==== 요청
+include::{snippets}/admin-sign-in/http-request.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/admin-sign-in/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/admin-sign-in/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-sign-in/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 로그아웃
+'''
+
+==== 요청
+include::{snippets}/admin-sign-out/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-sign-out/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-sign-out/http-response.adoc[]

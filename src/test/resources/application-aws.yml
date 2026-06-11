@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+aws:
+  s3:
+    image-origin-bucket: image-origin-bucket
+    public-bucket: public-bucket
+  lambda:
+    secret-key: motd-test-lambda-secret-key
+
+app:
+  domain:
+    image-origin-s3: image-origin-s3
+    public-s3: public-s3
+    cdn: cdn

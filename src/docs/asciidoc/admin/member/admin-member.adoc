@@ -1,0 +1,67 @@
+== 관리자 회원 관리 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 목록 조회
+'''
+
+==== 요청
+include::{snippets}/admin-member-find-all/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-member-find-all/request-cookies.adoc[]
+
+==== 요청 파라미터
+include::{snippets}/admin-member-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-member-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-member-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 상세 조회
+'''
+
+==== 요청
+include::{snippets}/admin-member-find-detail/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-member-find-detail/request-cookies.adoc[]
+
+==== 경로 파라미터
+include::{snippets}/admin-member-find-detail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-member-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-member-find-detail/response-fields.adoc[]
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 밴 처리
+'''
+
+==== 요청
+include::{snippets}/admin-member-ban/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-member-ban/request-cookies.adoc[]
+
+==== 경로 파라미터
+include::{snippets}/admin-member-ban/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/admin-member-ban/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-member-ban/http-response.adoc[]

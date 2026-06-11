@@ -1,0 +1,8 @@
+kakao:
+  token:
+    url: http://localhost:9998
+  client:
+    url: http://localhost:9998
+apple:
+  client:
+    url: http://localhost:9998

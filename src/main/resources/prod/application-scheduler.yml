@@ -1,0 +1,9 @@
+scheduler:
+  member-unban:
+    cron: "30 59 23 * * *" # Runs at 23:59:30 every day
+  service-estimate-status-update:
+    cron: "0 0 12 * * *" # Runs at 12:00 every day
+  service-estimate-reminder:
+    cron: "0 0 * * * *" # Runs every hour at minute 0
+  review-reminder:
+    cron: "0 0 * * * *" # Runs every hour at minute 0

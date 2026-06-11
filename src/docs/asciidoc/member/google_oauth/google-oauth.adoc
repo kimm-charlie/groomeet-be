@@ -1,0 +1,74 @@
+== 구글 로그인 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 구글 로그인 (기존 회원 웹 버전)
+'''
+
+==== 요청
+include::{snippets}/google-oauth-sign-in-when-existing-member-web-version/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/google-oauth-sign-in-when-existing-member-web-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/google-oauth-sign-in-when-existing-member-web-version/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/google-oauth-sign-in-when-existing-member-web-version/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/google-oauth-sign-in-when-existing-member-web-version/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/google-oauth-sign-in-when-existing-member-web-version/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 구글 로그인 (기존 회원 앱 버전)
+'''
+
+==== 요청
+include::{snippets}/google-oauth-sign-in-when-existing-member-app-version/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/google-oauth-sign-in-when-existing-member-app-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/google-oauth-sign-in-when-existing-member-app-version/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/google-oauth-sign-in-when-existing-member-app-version/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/google-oauth-sign-in-when-existing-member-app-version/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 구글 로그인 (새로운 회원)
+'''
+
+==== 요청
+include::{snippets}/google-oauth-sign-in-when-not-existing-member/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/google-oauth-sign-in-when-not-existing-member/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/google-oauth-sign-in-when-not-existing-member/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/google-oauth-sign-in-when-not-existing-member/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/google-oauth-sign-in-when-not-existing-member/response-fields.adoc[]

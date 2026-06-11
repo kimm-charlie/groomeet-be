@@ -1,0 +1,7 @@
+spring:
+  config:
+    import: optional:classpath:/local/
+  profiles:
+    group:
+      local: db, jpa, jwt, redis, cors, setting, url, apple, flyway, aws, file-size, kakao, mobile-ok, scheduler, hackle, actuator, ai
+    active: local

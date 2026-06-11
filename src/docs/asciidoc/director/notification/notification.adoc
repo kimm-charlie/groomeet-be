@@ -1,0 +1,44 @@
+==  알림 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 알림 전체 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/notification-director-findAll/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/notification-director-findAll/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/notification-director-findAll/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/notification-director-findAll/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/notification-director-findAll/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 읽지 않은 알림 여부 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/notification-director-exists/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/notification-director-exists/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/notification-director-exists/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/notification-director-exists/response-fields.adoc[]

@@ -1,0 +1,5 @@
+jwt:
+  accessToken:
+    secret-key: tokenSecrettokenSecrettokenSecretasdbnasbdjhhasjdhkjashjdk
+  refreshToken:
+    secret-key: refreshSecretrefreshSecretrefreshSecretaskdjalksjdjashdjkhasjkdhajskd

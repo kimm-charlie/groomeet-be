@@ -1,0 +1,113 @@
+== 관리자 디렉터 서비스 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 디렉터 서비스 전체 조회
+'''
+
+==== 요청
+include::{snippets}/admin-director-service-find-all/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-director-service-find-all/request-cookies.adoc[]
+
+==== 요청 파라미터
+include::{snippets}/admin-director-service-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-director-service-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-director-service-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 디렉터 서비스 상세 조회
+'''
+
+==== 요청
+include::{snippets}/admin-director-service-find-detail/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-director-service-find-detail/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-director-service-find-detail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-director-service-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-director-service-find-detail/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 디렉터 서비스 등록
+'''
+
+==== 요청
+include::{snippets}/admin-director-service-save/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-director-service-save/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-director-service-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-director-service-save/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 디렉터 서비스 수정
+'''
+
+==== 요청
+include::{snippets}/admin-director-service-update/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-director-service-update/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-director-service-update/path-parameters.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-director-service-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-director-service-update/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 디렉터 서비스 삭제
+'''
+
+==== 요청
+include::{snippets}/admin-director-service-delete/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-director-service-delete/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-director-service-delete/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-director-service-delete/http-response.adoc[]

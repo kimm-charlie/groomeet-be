@@ -1,0 +1,2 @@
+ALTER TABLE chat_image
+    ADD COLUMN is_deleted BOOLEAN DEFAULT FALSE;

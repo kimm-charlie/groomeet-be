@@ -1,0 +1,59 @@
+== 관리자 컨설팅지 승인/반려 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 컨설팅지 승인
+'''
+
+==== 요청
+include::{snippets}/admin-consulting-sheet-approve/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-consulting-sheet-approve/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-consulting-sheet-approve/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-consulting-sheet-approve/http-response.adoc[]
+
+==== 에러 응답 (400 상태 오류)
+include::{snippets}/admin-consulting-sheet-approve-fail-bad-request/http-response.adoc[]
+
+==== 에러 응답 (404 존재하지 않음)
+include::{snippets}/admin-consulting-sheet-approve-fail-not-found/http-response.adoc[]
+
+==== 에러 응답 필드 설명
+include::{snippets}/admin-consulting-sheet-approve-fail-bad-request/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 컨설팅지 반려
+'''
+
+==== 요청
+include::{snippets}/admin-consulting-sheet-reject/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-consulting-sheet-reject/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-consulting-sheet-reject/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-consulting-sheet-reject/http-response.adoc[]
+
+==== 에러 응답 (400 상태 오류)
+include::{snippets}/admin-consulting-sheet-reject-fail-bad-request/http-response.adoc[]
+
+==== 에러 응답 (404 존재하지 않음)
+include::{snippets}/admin-consulting-sheet-reject-fail-not-found/http-response.adoc[]
+
+==== 에러 응답 필드 설명
+include::{snippets}/admin-consulting-sheet-reject-fail-bad-request/response-fields.adoc[]

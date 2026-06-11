@@ -1,0 +1,59 @@
+== 컨설팅 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  컨설팅 신청 자격 확인 (인증된 사용자)
+'''
+
+==== 요청
+include::{snippets}/consulting-eligibility-check/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/consulting-eligibility-check/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/consulting-eligibility-check/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/consulting-eligibility-check/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  컨설팅 신청 자격 확인 (비인증 사용자)
+'''
+
+==== 요청
+include::{snippets}/consulting-eligibility-check-unauthenticated/http-request.adoc[]
+
+==== 응답
+include::{snippets}/consulting-eligibility-check-unauthenticated/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/consulting-eligibility-check-unauthenticated/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  컨설팅 요청
+'''
+
+==== 요청
+include::{snippets}/consulting-request-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/consulting-request-save/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/consulting-request-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/consulting-request-save/http-response.adoc[]

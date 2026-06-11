@@ -1,0 +1,15 @@
+== 컨설팅지 API (디렉터용)
+
+=== 컨설팅지 발송
+
+==== 요청
+include::{snippets}/consulting-sheet-save-for-director/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/consulting-sheet-save-for-director/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/consulting-sheet-save-for-director/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/consulting-sheet-save-for-director/http-response.adoc[]

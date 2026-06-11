@@ -1,0 +1,20 @@
+== 디렉터 팝업 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 디렉터 팝업 전체조회 API
+'''
+
+==== 요청
+include::{snippets}/popup-director-find-all/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/popup-director-find-all/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/popup-director-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/popup-director-find-all/response-fields.adoc[]

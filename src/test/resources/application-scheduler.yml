@@ -1,0 +1,9 @@
+scheduler:
+  popular-director-service:
+    cron: "0 1 15 * * MON" # Runs at 15:01 Monday
+  member-unban:
+    cron: "0 2 15 * * ?" # Runs at 15:02 every day
+  service-estimate-status-update:
+    cron: "0 3 15 * * ?" # Runs at 15:03 every day
+  review-reminder:
+    cron: "0 0 * * * *" # Runs every hour at minute 0

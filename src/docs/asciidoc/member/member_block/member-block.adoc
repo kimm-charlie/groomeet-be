@@ -1,0 +1,89 @@
+== 회원 차단 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  차단
+'''
+
+==== 요청
+include::{snippets}/member-block-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-block-save/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-block-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-block-save/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  차단 해제
+'''
+
+==== 요청
+include::{snippets}/member-block-delete/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-block-delete/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-block-delete/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-block-delete/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 차단 전체 조회
+'''
+
+==== 요청
+include::{snippets}/member-block-find-all/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-block-find-all/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/member-block-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/member-block-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-block-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 차단 여부 체크
+'''
+
+==== 요청
+include::{snippets}/member-block-check/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-block-check/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/member-block-check/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/member-block-check/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-block-check/response-fields.adoc[]

@@ -1,0 +1,1 @@
+ALTER TABLE consulting_sheet ADD COLUMN price VARCHAR(50) NOT NULL DEFAULT '';

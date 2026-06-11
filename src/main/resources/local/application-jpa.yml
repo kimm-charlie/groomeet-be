@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 300
+    open-in-view: false
+
+logging:
+  level:
+    org.hibernate.SQL: INFO

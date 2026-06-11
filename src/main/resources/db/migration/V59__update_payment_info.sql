@@ -1,0 +1,11 @@
+ALTER TABLE payment_info
+DROP COLUMN method_code;
+
+ALTER TABLE payment_info
+ADD COLUMN payment_method VARCHAR(50) NOT NULL;
+
+ALTER TABLE payment_info
+ADD COLUMN status VARCHAR(50) NOT NULL;
+
+ALTER TABLE service_request
+MODIFY COLUMN status VARCHAR(50) DEFAULT 'PENDING' NOT NULL;

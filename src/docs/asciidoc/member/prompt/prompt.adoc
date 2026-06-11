@@ -1,0 +1,89 @@
+== AI 프롬프트 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== AI 서비스 추천 (텍스트만)
+'''
+
+==== 요청
+include::{snippets}/prompt-recommend-success-text-only/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/prompt-recommend-success-text-only/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/prompt-recommend-success-text-only/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/prompt-recommend-success-text-only/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/prompt-recommend-success-text-only/response-fields.adoc[]
+
+{empty} +
+{empty} +
+
+[.lead]
+=== AI 서비스 추천 (이미지 포함)
+'''
+
+==== 요청
+include::{snippets}/prompt-recommend-success-with-images/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/prompt-recommend-success-with-images/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/prompt-recommend-success-with-images/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/prompt-recommend-success-with-images/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/prompt-recommend-success-with-images/response-fields.adoc[]
+
+{empty} +
+{empty} +
+
+[.lead]
+=== AI 서비스 추천 (매칭 실패)
+'''
+
+==== 요청
+include::{snippets}/prompt-recommend-unmatched/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/prompt-recommend-unmatched/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/prompt-recommend-unmatched/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/prompt-recommend-unmatched/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/prompt-recommend-unmatched/response-fields.adoc[]
+
+{empty} +
+{empty} +
+
+[.lead]
+=== AI 요청서 생성
+'''
+
+==== 요청
+include::{snippets}/prompt-generate-success/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/prompt-generate-success/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/prompt-generate-success/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/prompt-generate-success/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/prompt-generate-success/response-fields.adoc[]

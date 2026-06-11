@@ -1,0 +1,44 @@
+= 관리자용 API 문서
+:toc: left
+:toclevels: 2
+:sectlinks:
+:doctype: book
+:source-highlighter: highlightjs
+:toc-title: 목차
+:sectanchors:
+:snippets: ../../../../../build/generated-snippets
+
+++++
+<style>
+.sect2 h3 {  /* API 엔드포인트 제목에 대한 스타일 */
+    color: #2c3e50;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4a90e2;
+    margin: 20px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.separator {  /* 구분선에 대한 스타일 */
+    border-top: 2px solid #eee;
+    margin: 20px 0;
+}
+</style>
+++++
+
+include::admin/admin/admin.adoc[]
+include::admin/dashboard/admin-dashboard.adoc[]
+include::admin/auth/admin-auth.adoc[]
+include::admin/member/admin-member.adoc[]
+include::admin/popup/admin-popup.adoc[]
+include::admin/banner/admin-banner.adoc[]
+include::admin/director_service/admin-director-service.adoc[]
+include::admin/service_request/admin-service-request.adoc[]
+include::admin/service_estimate/admin-service-estimate.adoc[]
+include::admin/chat_room/admin-chat-room.adoc[]
+include::admin/chat_message/admin-chat-message.adoc[]
+include::admin/file/admin-file.adoc[]
+include::admin/portfolio/admin-portfolio.adoc[]
+include::admin/consulting_request/admin-consulting-request.adoc[]
+include::admin/consulting_sheet/admin-consulting-sheet.adoc[]

@@ -1,0 +1,6 @@
+ALTER TABLE chat_room
+    ADD COLUMN is_director_paid BOOLEAN DEFAULT FALSE,
+ADD COLUMN director_paid_at DATETIME NULL;
+
+ALTER TABLE director_info
+    ADD COLUMN cash BIGINT NOT NULL DEFAULT 0;

@@ -1,0 +1,164 @@
+<configuration>
+
+    <!-- Access log 설정 -->
+    <appender name="ACCESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="com.motd.be.common.log.ExcludeWarnAndAboveFilter"/>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp/>
+                <logLevel/>
+                <loggerName/>
+                <message/>
+                <mdc>
+                    <includeMdcKeyName>requestLoggingId</includeMdcKeyName>
+                    <includeMdcKeyName>xForwardedFor</includeMdcKeyName>
+                    <includeMdcKeyName>xRealIP</includeMdcKeyName>
+                    <includeMdcKeyName>requestUrl</includeMdcKeyName>
+                    <includeMdcKeyName>httpMethod</includeMdcKeyName>
+                    <includeMdcKeyName>id</includeMdcKeyName>
+                    <includeMdcKeyName>responseStatus</includeMdcKeyName>
+                </mdc>
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/logs/access_logs/%i.access.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Error log 설정 -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="com.motd.be.common.log.AllowErrorOnlyFilter"/>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <providers>
+                <timestamp/>
+                <logLevel/>
+                <loggerName/>
+                <message/>
+                <mdc>
+                    <includeMdcKeyName>requestLoggingId</includeMdcKeyName>
+                    <includeMdcKeyName>xForwardedFor</includeMdcKeyName>
+                    <includeMdcKeyName>xRealIP</includeMdcKeyName>
+                    <includeMdcKeyName>requestUrl</includeMdcKeyName>
+                    <includeMdcKeyName>id</includeMdcKeyName>
+                    <includeMdcKeyName>cause</includeMdcKeyName>
+                    <includeMdcKeyName>trace</includeMdcKeyName>
+                    <includeMdcKeyName>requestBody</includeMdcKeyName>
+                </mdc>
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 롤링 파일 이름 패턴, 애플리케이션 시작 시부터 날짜가 포함된 파일 이름 사용 -->
+            <fileNamePattern>/logs/error_logs/%i.error.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Warn log 설정 -->
+    <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="com.motd.be.common.log.AllowWarnOnlyFilter"/>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <providers>
+                <timestamp/>
+                <logLevel/>
+                <loggerName/>
+                <message/>
+                <mdc>
+                    <includeMdcKeyName>requestLoggingId</includeMdcKeyName>
+                    <includeMdcKeyName>xForwardedFor</includeMdcKeyName>
+                    <includeMdcKeyName>xRealIP</includeMdcKeyName>
+                    <includeMdcKeyName>requestUrl</includeMdcKeyName>
+                    <includeMdcKeyName>id</includeMdcKeyName>
+                    <includeMdcKeyName>type</includeMdcKeyName>
+                    <includeMdcKeyName>message</includeMdcKeyName>
+                    <includeMdcKeyName>requestBody</includeMdcKeyName>
+                </mdc>
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 롤링 파일 이름 패턴, 애플리케이션 시작 시부터 날짜가 포함된 파일 이름 사용 -->
+            <fileNamePattern>/logs/warn_logs/%i.warn.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Scheduler log 설정 -->
+    <appender name="SCHEDULER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <providers>
+                <timestamp/>
+                <logLevel/>
+                <loggerName/>
+                <message/>
+                <mdc>
+                    <includeMdcKeyName>requestLoggingId</includeMdcKeyName>
+                </mdc>
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 롤링 파일 이름 패턴, 애플리케이션 시작 시부터 날짜가 포함된 파일 이름 사용 -->
+            <fileNamePattern>/logs/scheduler_logs/%i.scheduler.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{MM-dd HH:mm:ss.SSS} %highlight(%-5level) --- [ %thread{10}] --- [%logger{36}]: %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="local">
+        <!--         로컬 환경에서 사용할 Logger 설정 -->
+        <logger name="root" level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <!-- devLogger 전용 설정 -->
+        <!--        <logger name="com.motd.be" level="DEBUG" additivity="false">-->
+        <!--            <appender-ref ref="CONSOLE"/>-->
+        <!--        </logger>-->
+    </springProfile>
+
+    <springProfile name="dev-green,dev-blue">
+        <!--         개발 환경에서 사용할 Logger 설정 -->
+        <logger name="root" level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <!--         devLogger 전용 설정 -->
+        <logger name="com.motd.be" level="DEBUG" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+    </springProfile>
+
+    <springProfile name="prod-green,prod-blue">
+        <!--         운영 환경에서 사용할 Logger 설정 -->
+        <logger name="root" level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <!-- prodLogger 전용 설정 -->
+        <logger name="com.motd.be" level="info" additivity="true">
+            <appender-ref ref="ACCESS"/>
+            <appender-ref ref="ERROR"/>
+            <appender-ref ref="WARN"/>
+        </logger>
+    </springProfile>
+
+
+</configuration>

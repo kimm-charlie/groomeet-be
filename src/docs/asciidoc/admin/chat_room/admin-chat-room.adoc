@@ -1,0 +1,23 @@
+== 관리자 채팅방 관리 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 채팅방 상세 조회 (serviceEstimateId로 조회)
+'''
+
+==== 요청
+include::{snippets}/admin-chat-room-find-detail/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-chat-room-find-detail/request-cookies.adoc[]
+
+==== 요청 파라미터
+include::{snippets}/admin-chat-room-find-detail/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-chat-room-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-chat-room-find-detail/response-fields.adoc[]

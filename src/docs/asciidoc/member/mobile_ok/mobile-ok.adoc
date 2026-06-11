@@ -1,0 +1,83 @@
+== 본인인증 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 본인인증을 위한 토큰 요청
+'''
+
+==== 요청
+include::{snippets}/mobile-ok-request-token/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/mobile-ok-request-token/request-cookies.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/mobile-ok-request-token/response-fields.adoc[]
+
+==== 응답
+include::{snippets}/mobile-ok-request-token/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 본인인증 결과 성공 여부 조회 (웹 버전)
+'''
+
+==== 요청
+include::{snippets}/mobile-ok-authentication-web/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/mobile-ok-authentication-web/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/mobile-ok-authentication-web/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/mobile-ok-authentication-web/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 본인인증 결과 성공 여부 조회 (앱 버전)
+'''
+
+==== 요청
+include::{snippets}/mobile-ok-authentication-app/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/mobile-ok-authentication-app/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/mobile-ok-authentication-app/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/mobile-ok-authentication-app/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 본인인증 뷰 페이지 요청 (앱용 웹뷰)
+'''
+
+==== 요청
+include::{snippets}/mobile-ok-view/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/mobile-ok-view/request-cookies.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/mobile-ok-view/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/mobile-ok-view/http-response.adoc[]

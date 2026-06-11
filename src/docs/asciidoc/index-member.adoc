@@ -1,0 +1,63 @@
+= 회원용 API 문서
+:toc: left
+:toclevels: 2
+:sectlinks:
+:doctype: book
+:source-highlighter: highlightjs
+:toc-title: 목차
+:sectanchors:
+:snippets: ../../../../../build/generated-snippets
+
+++++
+<style>
+.sect2 h3 {  /* API 엔드포인트 제목에 대한 스타일 */
+    color: #2c3e50;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4a90e2;
+    margin: 20px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.separator {  /* 구분선에 대한 스타일 */
+    border-top: 2px solid #eee;
+    margin: 20px 0;
+}
+</style>
+++++
+
+include::member/prompt/prompt.adoc[]
+include::member/popular_portfolio/popular-portfolio.adoc[]
+include::member/time_slot/time-slot.adoc[]
+include::member/apple_oauth/apple-oauth.adoc[]
+include::member/google_oauth/google-oauth.adoc[]
+include::member/kakao_oauth/kakao-oauth.adoc[]
+include::member/auth/auth.adoc[]
+include::member/popup/popup.adoc[]
+include::member/file/file.adoc[]
+include::member/director_info/director-info.adoc[]
+include::member/member/member.adoc[]
+include::member/member_metadata/member-metadata.adoc[]
+include::member/portfolio/portfolio.adoc[]
+include::member/location/location.adoc[]
+include::member/director_service/director-service.adoc[]
+include::member/service_request/service-request.adoc[]
+include::member/director_service_mapping/director-service-mapping.adoc[]
+include::member/service_estimate/service-estimate.adoc[]
+include::member/chat_room/chat-room.adoc[]
+include::member/sse/sse.adoc[]
+include::member/chat_message/chat-message.adoc[]
+include::member/director_profile_detail/director-profile-detail.adoc[]
+include::member/story/story.adoc[]
+include::member/review/review.adoc[]
+include::member/member_block/member-block.adoc[]
+include::member/member_director_favorite/member-director-favorite.adoc[]
+include::member/report/report.adoc[]
+include::member/notification/notification.adoc[]
+include::member/member_location_mapping/member-location-mapping.adoc[]
+include::member/banner/banner.adoc[]
+include::member/mobile_ok/mobile-ok.adoc[]
+include::member/fcm_token/fcm-token.adoc[]
+include::member/consulting_request/consulting-request.adoc[]
+include::member/consulting_sheet/consulting-sheet.adoc[]

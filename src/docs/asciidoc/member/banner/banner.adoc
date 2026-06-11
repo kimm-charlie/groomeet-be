@@ -1,0 +1,17 @@
+== 배너 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 배너 전체조회 API
+'''
+
+==== 요청
+include::{snippets}/banner-find-all/http-request.adoc[]
+
+==== 응답
+include::{snippets}/banner-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/banner-find-all/response-fields.adoc[]

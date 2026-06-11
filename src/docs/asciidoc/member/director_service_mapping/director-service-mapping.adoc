@@ -1,0 +1,20 @@
+== 디렉터 서비스 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 특정 디렉터의 전체 서비스 조회 (회원용)
+'''
+
+==== 요청
+include::{snippets}/director-service-mapping-find-all-for-public/http-request.adoc[]
+
+==== pathVariables
+include::{snippets}/director-service-mapping-find-all-for-public/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/director-service-mapping-find-all-for-public/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-service-mapping-find-all-for-public/response-fields.adoc[]

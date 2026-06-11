@@ -1,0 +1,402 @@
+import org.asciidoctor.gradle.jvm.AsciidoctorTask
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.4'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+    id 'com.epages.restdocs-api-spec' version '0.18.2'
+    id 'org.hidetake.swagger.generator' version '2.18.2'
+}
+
+group = 'com.manotd'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', '2025.0.0')
+}
+
+dependencies {
+    implementation files('libs/mobileOKManager-jdk1.8_1.0.1.jar')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    //redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    //jwt
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+    //테스트용 h2
+    testImplementation 'com.h2database:h2'
+
+    //json 파싱
+    implementation 'org.json:json:20231013'
+
+    //spring security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    //apple oauth decoder
+    implementation 'org.bouncycastle:bcpkix-jdk18on:1.78.1'
+    implementation 'commons-io:commons-io:2.16.1'
+
+    //jasypt
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.78.1'
+
+    // mockmvc + restDocs
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation 'com.epages:restdocs-api-spec-mockmvc:0.18.2'
+
+    // asciidoctor (adoc 파일을 변환하기 위한 플러그인)
+    testImplementation "org.springframework.restdocs:spring-restdocs-asciidoctor:3.0.0"
+
+    // swagger
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    swaggerUI 'org.webjars:swagger-ui:4.11.1'
+
+    //openfeign
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    //validator
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    //WireMock Standalone 라이브러리
+    testImplementation 'org.wiremock:wiremock-standalone:3.12.0'
+
+    //google client
+    implementation 'com.google.api-client:google-api-client:2.6.0'
+    implementation 'com.google.http-client:google-http-client-jackson2:1.43.3'
+
+    //Querydsl 추가
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+    //log
+    implementation 'net.logstash.logback:logstash-logback-encoder:6.6'
+
+    //flyway
+    implementation 'org.flywaydb:flyway-mysql'
+
+    // AWS S3
+    implementation(platform("io.awspring.cloud:spring-cloud-aws-dependencies:3.1.0"))
+    implementation("io.awspring.cloud:spring-cloud-aws-starter-s3")
+
+    //websocket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+    //해클
+    implementation 'io.hackle:hackle-server-sdk:2.31.0'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-admin:9.7.0'
+
+    // spring actuator
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+
+    // Micrometer 메트릭을 Prometheus 포맷으로 “export”해주는 레지스트리
+    runtimeOnly "io.micrometer:micrometer-registry-prometheus"
+
+    // Thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+}
+
+tasks.named("build") {
+    dependsOn "ensureDocsDir", "cleanDocs", "test", "asciidoctorMember", "asciidoctorAdmin", "asciidoctorDirector", "generateExceptionDocs", "openapi3", "generateSwaggerUI", "copyDocs", "bootJar", "patchSwaggerUI"
+}
+
+tasks.register("ensureDocsDir") {
+    file("src/main/resources/static/docs").mkdirs()
+}
+
+// Generate exception codes markdown from enums
+tasks.register("generateExceptionMarkdown", Exec) {
+    dependsOn "ensureDocsDir"
+
+    workingDir projectDir
+
+    // Find python3 executable
+    def python = ["python3.14", "python3.13", "python3", "/opt/homebrew/bin/python3", "/usr/bin/python3"]
+        .find { path ->
+            try {
+                return new ByteArrayOutputStream().withStream { os ->
+                    exec {
+                        commandLine "which", path
+                        standardOutput = os
+                        ignoreExitValue = true
+                    }.exitValue == 0
+                }
+            } catch (Exception e) {
+                return false
+            }
+        }
+
+    if (python == null) {
+        throw new GradleException("Python 3 not found. Please install Python 3.")
+    }
+
+    commandLine python, "scripts/generate_exception_markdown.py"
+
+    doFirst {
+        println "Generating exception markdown using: ${python}"
+    }
+}
+
+// Generate exception codes HTML from markdown
+tasks.register("generateExceptionDocs", Exec) {
+    dependsOn "ensureDocsDir", "generateExceptionMarkdown"
+
+    workingDir projectDir
+
+    // Find python3 executable
+    def python = ["python3.14", "python3.13", "python3", "/opt/homebrew/bin/python3", "/usr/bin/python3"]
+        .find { path ->
+            try {
+                return new ByteArrayOutputStream().withStream { os ->
+                    exec {
+                        commandLine "which", path
+                        standardOutput = os
+                        ignoreExitValue = true
+                    }.exitValue == 0
+                }
+            } catch (Exception e) {
+                return false
+            }
+        }
+
+    if (python == null) {
+        throw new GradleException("Python 3 not found. Please install Python 3.")
+    }
+
+    commandLine python, "scripts/generate_exception_html.py"
+
+    doFirst {
+        println "Generating exception documentation using: ${python}"
+    }
+}
+
+// 기존 문서 삭제
+tasks.register("cleanDocs", Delete) {
+    dependsOn "ensureDocsDir"
+    delete "src/main/resources/static/docs" // ✅ 기존 문서 삭제
+}
+
+tasks.named('test') {
+    dependsOn "cleanDocs"
+    useJUnitPlatform()
+    systemProperty 'jasypt.encryptor.password', System.getProperty('jasypt.encryptor.password')
+}
+
+// 사용자용 문서
+tasks.register("asciidoctorMember", AsciidoctorTask) {
+    dependsOn "test"
+
+    doFirst {
+        file("build/generated-snippets").mkdirs()
+    }
+
+    sourceDir = file("src/docs/asciidoc")
+    outputDir = file("build/docs/")
+    sources {
+        include "index-member.adoc"
+    }
+    baseDirFollowsSourceFile() // index-member.adoc 의 include 의 경로를 baseDir 로 지정
+}
+
+tasks.register("asciidoctorAdmin", AsciidoctorTask) {
+    dependsOn "test"
+
+    doFirst {
+        file("build/generated-snippets").mkdirs()
+    }
+
+    sourceDir = file("src/docs/asciidoc")
+    outputDir = file("build/docs/")
+    sources {
+        include "index-admin.adoc"
+    }
+    baseDirFollowsSourceFile()// index-admin.adoc 의 include 의 경로를 baseDir 로 지정
+}
+
+tasks.register("asciidoctorDirector", AsciidoctorTask) {
+    dependsOn "test"
+
+    doFirst {
+        file("build/generated-snippets").mkdirs()
+    }
+
+    sourceDir = file("src/docs/asciidoc")
+    outputDir = file("build/docs/")
+    sources {
+        include "index-director.adoc"
+    }
+    baseDirFollowsSourceFile()// index-director.adoc 의 include 의 경로를 baseDir 로 지정
+}
+
+
+//테스트 돌릴 때 자동 생성될 openapi3.yaml의 내용(메타데이터) 을 정의
+openapi3 {
+    title = "MOTD API Docs"
+    description = "REST Docs 기반 + Swagger UI"
+    version = "1.0.0"
+    format = "yaml"
+
+    servers = [
+            { url = "https://motd-test.com" },
+            { url = "http://localhost:8080" }
+    ]
+
+}
+
+
+//swagger ui 를 만들기 전에 openapi3.yaml 파일의 생성을 보장
+tasks.withType(GenerateSwaggerUI) {
+    dependsOn 'openapi3'
+
+    doFirst {
+        def swaggerUIFile = file("${openapi3.outputDirectory}/openapi3.yaml")
+//authorization header 를 위한 설정
+        def securityYaml =
+                "components:\n" +
+                        "  securitySchemes:\n" +
+                        "    bearerAuth:\n" +
+                        "      type: http\n" +
+                        "      scheme: bearer\n" +
+                        "      bearerFormat: JWT\n" +
+                        "    accessTokenCookie:\n" +
+                        "      type: apiKey\n" +
+                        "      name: ACCESS_TOKEN\n" +
+                        "      in: cookie\n" +
+                        "    refreshTokenCookie:\n" +
+                        "      type: apiKey\n" +
+                        "      name: REFRESH_TOKEN\n" +
+                        "      in: cookie\n" +
+                        "\n" +
+                        "security:\n" +
+                        "  - bearerAuth: []\n" +
+                        "  - accessTokenCookie: []\n" +
+                        "  - refreshTokenCookie: []\n"
+
+        swaggerUIFile.append("\n" + securityYaml)
+    }
+}
+
+//swagger ui 정적파일의 위치 지정
+swaggerSources {
+    sample {
+        setInputFile(file("build/api-spec/openapi3.yaml"))
+    }
+}
+
+//swagger 에서 expansion 이 다 닫혀있게 하기 위해서 swagger-ui의 index.html 파일을 수정
+tasks.register("patchSwaggerUI") {
+    dependsOn "generateSwaggerUI"
+    doLast {
+        def indexFile = file("build/swagger-ui-sample/index.html")
+        def content = indexFile.text
+
+        // 기존 옵션들이 중복될 수도 있으니 한 번 지워주고
+        content = content
+                .replaceAll(/docExpansion: ?["']?\w+["']?,?/, '')
+                .replaceAll(/tagsSorter: ?["']?\w+["']?,?/, '')
+                .replaceAll(/operationsSorter: ?["']?\w+["']?,?/, '')
+
+        // SwaggerUIBundle({ 다음에 설정 삽입
+        content = content.replace(
+                "SwaggerUIBundle({",
+                """SwaggerUIBundle({
+                      docExpansion: "none",
+                      tagsSorter: "alpha",
+                      operationsSorter: "alpha","""
+        )
+
+        indexFile.text = content
+    }
+}
+
+
+// 새 문서 복사 (asciidoctor 및 exception docs 실행 후)
+tasks.register("copyDocs", Copy) {
+    dependsOn("asciidoctorMember", "asciidoctorAdmin", "asciidoctorDirector", "generateExceptionDocs", "generateSwaggerUI", "patchSwaggerUI")
+    // asciidoctor 및 exception docs 실행 후 복사
+
+    // 기존 REST Docs HTML 복사 (includes exception-codes.html)
+    from("build/docs/") {
+        include "**/*.html"
+    }
+
+    // Swagger UI 결과물 복사
+    from("build/swagger-ui-sample") {
+        into "swagger"
+    }
+
+    // 복사 대상
+    into "src/main/resources/static/docs" // ✅ Spring Boot에서 제공할 위치
+}
+
+tasks.named("bootJar") {
+    dependsOn "copyDocs"  // ✅ copyDocs 이후에 bootJar 실행 보장
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE  // 중복 파일 처리: 마지막(최신) 파일 사용
+    from("src/main/resources/static/docs") {
+        into "BOOT-INF/classes/static/docs"
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-parameters'
+}
+
+//Querydsl 추가, 자동 생성된 Q클래스 gradle clean으로 제거
+clean {
+    delete file('build/generated')
+}
+
+
+def generated = file("build/generated/sources/annotationProcessor/java/main")
+
+sourceSets {
+    main {
+        java {
+            srcDirs += generated
+        }
+    }
+}

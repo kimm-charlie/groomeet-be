@@ -1,0 +1,42 @@
+== 회원 지역 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 활동 지역 조회 (회원용)
+'''
+
+==== 요청
+include::{snippets}/member-location-mapping-find-all/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-location-mapping-find-all/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/member-location-mapping-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-location-mapping-find-all/response-fields.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 활동 지역 저장 또는 수정
+'''
+
+==== 요청
+include::{snippets}/member-location-mapping-save-or-update/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-location-mapping-save-or-update/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-location-mapping-save-or-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-location-mapping-save-or-update/http-response.adoc[]

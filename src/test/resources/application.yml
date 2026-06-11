@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    group:
+      test: db, jasypt, jpa, jwt, redis, cors, setting, url, apple, flyway, aws, setting, kakao, mobile-ok, scheduler, hackle
+    active: test

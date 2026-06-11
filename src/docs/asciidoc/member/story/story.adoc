@@ -1,0 +1,41 @@
+== 스토리 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 스토리 전체 조회
+'''
+
+==== 요청
+include::{snippets}/story-findAll/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/story-findAll/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/story-findAll/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/story-findAll/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 스토리 상세 조회
+'''
+
+==== 요청
+include::{snippets}/story-findDetail/http-request.adoc[]
+
+==== pathVariables
+include::{snippets}/story-findDetail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/story-findDetail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/story-findDetail/response-fields.adoc[]

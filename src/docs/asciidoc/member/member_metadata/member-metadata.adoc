@@ -1,0 +1,44 @@
+== 회원 메타데이터 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  메타데이터 저장 또는 업데이트
+'''
+
+==== 요청
+include::{snippets}/member-metadata-save-or-update/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-metadata-save-or-update/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-metadata-save-or-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-metadata-save-or-update/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  메타데이터 조회
+'''
+
+==== 요청
+include::{snippets}/member-metadata-find/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-metadata-find/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/member-metadata-find/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/member-metadata-find/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-metadata-find/response-fields.adoc[]

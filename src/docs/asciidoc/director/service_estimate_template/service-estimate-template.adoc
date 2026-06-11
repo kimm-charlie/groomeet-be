@@ -1,0 +1,113 @@
+== 자주쓰는 제안 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 자주쓰는 제안 전체 조회
+'''
+
+==== 요청
+include::{snippets}/service-estimate-template-find-all/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-estimate-template-find-all/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/service-estimate-template-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-estimate-template-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-estimate-template-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 자주쓰는 제안 상세 조회 (템플릿 아이디 기반)
+'''
+
+==== 요청
+include::{snippets}/service-estimate-template-find-detail-by-template-id/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-estimate-template-find-detail-by-template-id/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/service-estimate-template-find-detail-by-template-id/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-estimate-template-find-detail-by-template-id/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-estimate-template-find-detail-by-template-id/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 자주쓰는 제안 저장
+'''
+
+==== 요청
+include::{snippets}/service-estimate-template-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-estimate-template-save/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/service-estimate-template-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/service-estimate-template-save/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 자주쓰는 제안 업데이트
+'''
+
+==== 요청
+include::{snippets}/service-estimate-template-update/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-estimate-template-update/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/service-estimate-template-update/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/service-estimate-template-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/service-estimate-template-update/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 자주쓰는 제안 삭제
+'''
+
+==== 요청
+include::{snippets}/service-estimate-template-delete/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-estimate-template-delete/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/service-estimate-template-delete/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-estimate-template-delete/http-response.adoc[]

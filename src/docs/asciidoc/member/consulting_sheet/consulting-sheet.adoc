@@ -1,0 +1,23 @@
+== 컨설팅지 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  컨설팅지 상세 조회
+'''
+
+==== 요청
+include::{snippets}/consulting-sheet-detail/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/consulting-sheet-detail/request-cookies.adoc[]
+
+==== 경로 파라미터
+include::{snippets}/consulting-sheet-detail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/consulting-sheet-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/consulting-sheet-detail/response-fields.adoc[]

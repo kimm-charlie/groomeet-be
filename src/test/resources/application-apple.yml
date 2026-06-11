@@ -1,0 +1,8 @@
+apple:
+  client-id-app: client-id
+  client-id-web: client-id
+  secret-key:
+    key-id: key-id
+    team-id: team-id
+    url: https://appleid.apple.com
+APPLE_KEY_PATH: src/test/resources/apple_test_key.p8

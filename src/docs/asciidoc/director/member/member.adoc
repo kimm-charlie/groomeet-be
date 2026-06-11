@@ -1,0 +1,23 @@
+== 회원 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 간략 프로필 조회 (디렉터용)
+'''
+
+==== 요청
+include::{snippets}/find-profile-summary-for-director/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/find-profile-summary-for-director/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/find-profile-summary-for-director/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/find-profile-summary-for-director/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/find-profile-summary-for-director/response-fields.adoc[]

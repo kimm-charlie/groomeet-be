@@ -1,0 +1,118 @@
+== 관리자 팝업 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 팝업 전체조회
+'''
+
+==== 요청
+include::{snippets}/admin-popup-find-all/http-request.adoc[]
+
+==== 요청 파라미터 설명
+include::{snippets}/admin-popup-find-all/query-parameters.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-popup-find-all/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-popup-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-popup-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 팝업 상세조회
+'''
+
+==== 요청
+include::{snippets}/admin-popup-find-detail/http-request.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-popup-find-detail/path-parameters.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-popup-find-detail/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-popup-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-popup-find-detail/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 팝업 삭제
+'''
+
+==== 요청
+include::{snippets}/admin-popup-delete/http-request.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-popup-delete/path-parameters.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-popup-delete/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/admin-popup-delete/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+
+[.lead]
+=== 관리자 팝업 저장
+'''
+
+==== 요청
+include::{snippets}/admin-popup-save/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-popup-save/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-popup-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-popup-save/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-popup-save/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+
+[.lead]
+=== 관리자 팝업 업데이트
+'''
+
+==== 요청
+include::{snippets}/admin-popup-update/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-popup-update/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-popup-update/path-parameters.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-popup-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-popup-update/http-response.adoc[]

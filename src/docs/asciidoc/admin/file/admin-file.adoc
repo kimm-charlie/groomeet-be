@@ -1,0 +1,65 @@
+== 관리자 파일 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 Presigned-url 발급
+'''
+
+==== 요청
+include::{snippets}/admin-file-create-presigned-url/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/admin-file-create-presigned-url/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-file-create-presigned-url/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-file-create-presigned-url/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-file-create-presigned-url/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 파일 삭제
+'''
+
+==== 요청
+include::{snippets}/admin-file-delete/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/admin-file-delete/request-cookies.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-file-delete/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-file-delete/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 파일 처리 상태 업데이트
+'''
+
+==== 요청
+include::{snippets}/admin-file-update-process-status/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/admin-file-update-process-status/request-headers.adoc[]
+
+==== 요청 필드
+include::{snippets}/admin-file-update-process-status/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/admin-file-update-process-status/http-response.adoc[]

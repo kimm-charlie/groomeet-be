@@ -1,0 +1,48 @@
+== 포트폴리오 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 포트폴리오 전체 조회
+'''
+
+==== 요청
+include::{snippets}/portfolio-find-all/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/portfolio-find-all/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/portfolio-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/portfolio-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/portfolio-find-all/response-fields.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 포트폴리오 상세 조회
+'''
+
+==== 요청
+include::{snippets}/portfolio-find-detail/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/portfolio-find-detail/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/portfolio-find-detail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/portfolio-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/portfolio-find-detail/response-fields.adoc[]

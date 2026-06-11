@@ -1,0 +1,20 @@
+== 지역 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 지역 전체 조회
+'''
+
+==== 요청
+include::{snippets}/location-find-all/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/location-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/location-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/location-find-all/response-fields.adoc[]

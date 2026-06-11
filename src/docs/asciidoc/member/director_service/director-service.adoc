@@ -1,0 +1,20 @@
+== 디렉터 서비스 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 서비스 전체 조회
+'''
+
+==== 요청
+include::{snippets}/director-service-find-all/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/director-service-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/director-service-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-service-find-all/response-fields.adoc[]

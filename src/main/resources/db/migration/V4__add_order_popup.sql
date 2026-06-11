@@ -1,0 +1,2 @@
+ALTER TABLE `popup`
+    ADD COLUMN `sort_order` INTEGER DEFAULT 0;

@@ -1,0 +1,5 @@
+ALTER TABLE member
+ADD COLUMN unbanned_at DATE NULL;
+
+ALTER TABLE member
+ADD COLUMN reported_count INT NOT NULL DEFAULT 0;

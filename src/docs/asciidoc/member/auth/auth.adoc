@@ -1,0 +1,239 @@
+== 인증 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원가입 웹 버전
+'''
+
+==== 요청
+include::{snippets}/sign-up-web-version/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/sign-up-web-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/sign-up-web-version/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/sign-up-web-version/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/sign-up-web-version/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/sign-up-web-version/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원가입 앱 버전
+'''
+
+==== 요청
+include::{snippets}/sign-up-app-version/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/sign-up-web-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/sign-up-web-version/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/sign-up-web-version/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/sign-up-web-version/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 로그아웃 앱 버전
+'''
+
+==== 요청
+include::{snippets}/sign-out-app-version/http-request.adoc[]
+
+==== 헤더
+include::{snippets}/sign-out-app-version/request-headers.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/sign-out-app-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/sign-out-app-version/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/sign-out-app-version/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/sign-out-app-version/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 로그아웃 웹 버전
+'''
+
+==== 요청
+include::{snippets}/sign-out-web-version/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/sign-out-web-version/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/sign-out-web-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/sign-out-web-version/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/sign-out-web-version/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/sign-out-web-version/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원탈퇴 웹 버전
+'''
+
+==== 요청
+include::{snippets}/withdrawal-web-version/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/withdrawal-web-version/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/withdrawal-web-version/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/withdrawal-web-version/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/withdrawal-web-version/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원탈퇴 앱 버전
+'''
+
+==== 요청
+include::{snippets}/withdrawal-app-version/http-request.adoc[]
+
+==== 헤더
+include::{snippets}/withdrawal-app-version/request-headers.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/withdrawal-app-version/request-fields.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/withdrawal-app-version/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/withdrawal-app-version/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 토큰 재발급 (reissue) 앱 버전
+'''
+
+==== 요청
+include::{snippets}/reissue-token-app-version/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/reissue-token-app-version/query-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/reissue-token-app-version/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/reissue-token-app-version/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/reissue-token-app-version/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 브리지 코드 생성
+'''
+
+==== 요청
+include::{snippets}/auth-generate-bridge-code/http-request.adoc[]
+
+==== 헤더
+include::{snippets}/auth-generate-bridge-code/request-headers.adoc[]
+
+==== 응답
+include::{snippets}/auth-generate-bridge-code/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/auth-generate-bridge-code/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 브리지 코드를 통해 토큰 발급
+'''
+
+==== 요청
+include::{snippets}/auth-exchange-code-for-token/http-request.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/auth-exchange-code-for-token/query-parameters.adoc[]
+
+==== 응답 쿠키
+include::{snippets}/auth-exchange-code-for-token/response-cookies.adoc[]
+
+==== 응답
+include::{snippets}/auth-exchange-code-for-token/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 인증 정보 조회
+'''
+
+==== 요청
+include::{snippets}/auth-find-member-identity/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/auth-find-member-identity/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/auth-find-member-identity/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/auth-find-member-identity/response-fields.adoc[]

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script th:inline="javascript">
+
+        /*<![CDATA[*/
+        const scriptUrl = [[${scriptUrl}]]; // 서버 사이드에서 스크립트 URL을 받아옴
+        const requestUrl = [[${requestUrl}]]; // 서버 사이드에서 요청 URL을 받아옴
+        /*]]>*/
+
+        let isInitialized = false;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var headObserver = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    if (mutation.type === "childList") {
+                        mutation.addedNodes.forEach(function (node) {
+                            if (node.nodeName === "SCRIPT") {
+                                node.onload = function () {
+                                    if (!isInitialized && window.MOBILEOK) {
+                                        isInitialized = true;
+                                        initMobileOK();
+                                        headObserver.disconnect();
+                                    }
+                                };
+                            }
+                        });
+                    }
+                });
+            });
+
+            headObserver.observe(document.head, {childList: true, subtree: true});
+
+            // Load the initial script
+            var script = document.createElement('script');
+            // 이게 개발 및 운영서버에서 변경되야 한다.
+            script.src = scriptUrl;
+            document.head.appendChild(script);
+        });
+
+        function initMobileOK() {
+            MOBILEOK.process(requestUrl, "MWV", "");
+        }
+    </script>
+    <title>본인확인</title>
+</head>
+<body>
+</body>
+</html>

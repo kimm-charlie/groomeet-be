@@ -1,0 +1,20 @@
+== 디렉터 배너 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 디렉터 배너 전체조회 API
+'''
+
+==== 요청
+include::{snippets}/banner-director-find-all/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/banner-director-find-all/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/banner-director-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/banner-director-find-all/response-fields.adoc[]

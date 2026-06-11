@@ -1,0 +1,42 @@
+== 사업자 등록증 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  사업자 등록증 저장
+'''
+
+==== 요청
+include::{snippets}/business-registration-register/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/business-registration-register/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/business-registration-register/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/business-registration-register/http-response.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  사업자 등록증 조회
+'''
+
+==== 요청
+include::{snippets}/business-registration-find/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/business-registration-find/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/business-registration-find/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/business-registration-find/response-fields.adoc[]

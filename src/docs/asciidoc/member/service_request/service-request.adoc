@@ -1,0 +1,158 @@
+== 요청 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 저장
+'''
+
+==== 요청
+include::{snippets}/service-request-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-save/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/service-request-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/service-request-save/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 다이렉트 요청 저장
+'''
+
+==== 요청
+include::{snippets}/service-request-save-direct/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-save-direct/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/service-request-save-direct/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/service-request-save-direct/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 전체 조회 (회원)
+'''
+
+==== 요청
+include::{snippets}/service-request-findAll-for-member/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-findAll-for-member/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/service-request-findAll-for-member/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-request-findAll-for-member/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-request-findAll-for-member/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 상세 조회
+'''
+
+==== 요청
+include::{snippets}/service-request-findDetail-for-member/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-findDetail-for-member/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/service-request-findDetail-for-member/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-request-findDetail-for-member/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-request-findDetail-for-member/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 제안 수신 상태 변경
+'''
+
+==== 요청
+include::{snippets}/service-request-update-is-receiving-estimate/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-update-is-receiving-estimate/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/service-request-update-is-receiving-estimate/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/service-request-update-is-receiving-estimate/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/service-request-update-is-receiving-estimate/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 건수 조회 (내제안의 상단 갯수 조회)
+'''
+
+==== 요청
+include::{snippets}/service-request-findCounts-for-member/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-findCounts-for-member/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/service-request-findCounts-for-member/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-request-findCounts-for-member/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 요청 관련 서비스 조회 (회원)
+'''
+
+==== 요청
+include::{snippets}/service-request-find-service-for-member/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/service-request-find-service-for-member/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/service-request-find-service-for-member/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/service-request-find-service-for-member/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/service-request-find-service-for-member/response-fields.adoc[]

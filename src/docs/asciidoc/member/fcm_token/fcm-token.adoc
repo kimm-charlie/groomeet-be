@@ -1,0 +1,68 @@
+== FCM 토큰 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== FCM 토큰 등록
+'''
+
+==== 요청
+include::{snippets}/fcm-token-register/http-request.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/fcm-token-register/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/fcm-token-register/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/fcm-token-register/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== FCM 토큰 회원 매핑
+'''
+
+==== 요청
+include::{snippets}/fcm-token-map-member/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/fcm-token-map-member/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/fcm-token-map-member/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/fcm-token-map-member/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/fcm-token-map-member/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== FCM 토큰 회원 매핑 해제
+'''
+
+==== 요청
+include::{snippets}/fcm-token-unmap-member/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/fcm-token-unmap-member/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/fcm-token-unmap-member/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/fcm-token-unmap-member/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/fcm-token-unmap-member/http-response.adoc[]

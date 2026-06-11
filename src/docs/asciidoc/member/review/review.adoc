@@ -1,0 +1,139 @@
+== 리뷰관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 리뷰 저장
+'''
+
+==== 요청
+include::{snippets}/review-save/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/review-save/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/review-save/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/review-save/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/review-save/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 리뷰 수정
+'''
+
+==== 요청
+include::{snippets}/review-update/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/review-update/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/review-update/path-parameters.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/review-update/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/review-update/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+
+[.lead]
+=== 리뷰 삭제
+'''
+
+==== 요청
+include::{snippets}/review-delete/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/review-delete/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/review-delete/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/review-delete/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 특정 제안에 대한 리뷰 조회
+'''
+
+==== 요청
+include::{snippets}/review-find-by-service-estimate/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/review-find-by-service-estimate/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/review-find-by-service-estimate/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/review-find-by-service-estimate/http-response.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 내가 작성한 리뷰 전체조회
+'''
+
+==== 요청
+include::{snippets}/review-find-my-reviews/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/review-find-my-reviews/request-cookies.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/review-find-my-reviews/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/review-find-my-reviews/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/review-find-my-reviews/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 디렉터가 받은 리뷰 전체 조회
+'''
+
+==== 요청
+include::{snippets}/review-find-all-for-director/http-request.adoc[]
+
+==== pathVariables
+include::{snippets}/review-find-all-for-director/path-parameters.adoc[]
+
+==== 쿼리파라미터
+include::{snippets}/review-find-all-for-director/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/review-find-all-for-director/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/review-find-all-for-director/response-fields.adoc[]

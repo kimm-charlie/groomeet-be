@@ -1,0 +1,215 @@
+== 회원 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  닉네임 변경
+'''
+
+==== 요청
+include::{snippets}/member-update-nickname/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-update-nickname/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-update-nickname/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-update-nickname/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  닉네임 중복 체크
+'''
+
+==== 요청
+include::{snippets}/member-nickname-duplicate-check/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-nickname-duplicate-check/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-nickname-duplicate-check/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-nickname-duplicate-check/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-nickname-duplicate-check/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  프로필 이미지 변경
+'''
+
+==== 요청
+include::{snippets}/member-update-profile-image/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-update-profile-image/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-update-profile-image/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-update-profile-image/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  회원 정보 조회
+'''
+
+==== 요청
+include::{snippets}/member-find-info/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-find-info/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/member-find-info/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-find-info/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  회원 계정 설정 정보 조회
+'''
+
+==== 요청
+include::{snippets}/member-find-account-info/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-find-account-info/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/member-find-account-info/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-find-account-info/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 프로필 조회
+'''
+
+==== 요청
+include::{snippets}/member-find-profile/http-request.adoc[]
+
+==== pathVariables
+include::{snippets}/member-find-profile/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/member-find-profile/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-find-profile/response-fields.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 푸시 설정 조회
+'''
+
+==== 요청
+include::{snippets}/member-find-push-settings/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-find-push-settings/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/member-find-push-settings/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-find-push-settings/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 푸시 설정 업데이트
+'''
+
+==== 요청
+include::{snippets}/member-update-push-settings/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-update-push-settings/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/member-update-push-settings/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-update-push-settings/http-response.adoc[]
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 회원 레퍼럴 (초대코드) 조회
+'''
+
+==== 요청
+include::{snippets}/member-find-my-referral-code/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-find-my-referral-code/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/member-find-my-referral-code/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-find-my-referral-code/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 본인인증 여부 조회
+'''
+
+==== 요청
+include::{snippets}/member-is-authenticated/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/member-is-authenticated/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/member-is-authenticated/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/member-is-authenticated/response-fields.adoc[]
+

@@ -1,0 +1,80 @@
+== 디렉터 관련 API
+
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 소개글 수정
+'''
+
+==== 요청
+include::{snippets}/director-update-introduce-text/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-update-introduce-text/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/director-update-introduce-text/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/director-update-introduce-text/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 매장 주소 수정
+'''
+
+==== 요청
+include::{snippets}/director-update-store-address/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-update-store-address/request-cookies.adoc[]
+
+==== 요청 필드 설명
+include::{snippets}/director-update-store-address/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/director-update-store-address/http-response.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  프로필 완성도 조회
+'''
+
+==== 요청
+include::{snippets}/director-find-profile-completeness/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-find-profile-completeness/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/director-find-profile-completeness/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/director-find-profile-completeness/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+===  디렉터 프로필 기본 정보 조회
+'''
+
+==== 요청
+include::{snippets}/director-find-profile-basic/http-request.adoc[]
+
+==== 요청 쿠키
+include::{snippets}/director-find-profile-basic/request-cookies.adoc[]
+
+==== 응답
+include::{snippets}/director-find-profile-basic/http-response.adoc[]

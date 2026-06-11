@@ -1,0 +1,47 @@
+== 관리자 서비스 요청 관리 API
+
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 서비스 요청 목록 조회 (검색/상태 필터)
+'''
+
+==== 요청
+include::{snippets}/admin-service-request-find-all/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-service-request-find-all/request-cookies.adoc[]
+
+==== 요청 파라미터
+include::{snippets}/admin-service-request-find-all/query-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-service-request-find-all/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-service-request-find-all/response-fields.adoc[]
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+
+[.lead]
+=== 관리자 서비스 요청 상세 조회
+'''
+
+==== 요청
+include::{snippets}/admin-service-request-find-detail/http-request.adoc[]
+
+==== 쿠키
+include::{snippets}/admin-service-request-find-detail/request-cookies.adoc[]
+
+==== pathVariables
+include::{snippets}/admin-service-request-find-detail/path-parameters.adoc[]
+
+==== 응답
+include::{snippets}/admin-service-request-find-detail/http-response.adoc[]
+
+==== 응답 필드 설명
+include::{snippets}/admin-service-request-find-detail/response-fields.adoc[]

@@ -1,0 +1,1 @@
+ALTER TABLE service_estimate RENAME COLUMN director_completed_at TO director_done_at;

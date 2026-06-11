@@ -1,0 +1,129 @@
+name: motd-dev auto deploy
+
+on:
+  pull_request:
+    branches: ["dev"]
+
+permissions:
+  contents: read
+  actions: write
+
+env:
+  TZ: Asia/Seoul
+  BE_WORKING_DIR: .
+  APPLICATION_FILE_PATH: ./src/main/resources/application.yml
+
+jobs:
+  # Job[1]: BACKEND -> docker hub로 build & push
+  be-deploy:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis:latest
+        ports:
+          - 6379:6379
+    defaults:
+      run:
+        working-directory: ${{ env.BE_WORKING_DIR }}
+    steps:
+      # 1. Source 단계
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # JDK 세팅
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      # 2. yml 파일 변경
+      - name: Change Spring Active Profile
+        run: |
+          touch '${{ env.APPLICATION_FILE_PATH }}'
+          echo '${{ secrets.APPLICATION_DEV }}' > '${{ env.APPLICATION_FILE_PATH }}'
+
+        # 3. build 단계
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false  # dev 브랜치에서도 캐시 쓰기 허용
+
+      - name: Build with Gradle
+        run: ./gradlew build --build-cache --parallel
+
+      # 4. docker hub로 build & push
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: ${{ env.BE_WORKING_DIR }}
+          file: ${{ env.BE_WORKING_DIR }}/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/motd-dev-be:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # job[3]: EC2에서 docker 이미지 pull하고 실행
+  SSH-Transfer:
+    needs: [be-deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Github Actions IP
+        id: get-ip
+        run: |
+          response=$(curl -s canhazip.com)
+          echo "ipv4=$response" >> $GITHUB_ENV
+          echo "ipv4='$response'" >> "$GITHUB_OUTPUT"
+
+      - name: Setting environment variables
+        run: |
+          echo "AWS_DEFAULT_REGION=ap-northeast-2" >> $GITHUB_ENV
+          echo "AWS_SG_ID=${{ secrets.DEV_AWS_SG_ID }}" >> $GITHUB_ENV
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Add Github Actions IP to Security group
+        run: |
+          aws ec2 authorize-security-group-ingress --group-id ${{ env.AWS_SG_ID }} --protocol tcp --port 22 --cidr ${{ env.ipv4 }}/32
+
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-2
+
+      - name: SSH Transfer
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          username: ubuntu
+          key: ${{ secrets.KEY }}
+          script: |
+            echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+            sudo chmod 777 /home/ubuntu/deploy.sh
+            sudo /home/ubuntu/deploy.sh # 여기 안에서 blue/green + ALB까지 다 처리
+            sudo docker image prune -a -f
+
+      - name: Remove Github Actions IP from security groups
+        run: |
+          aws ec2 revoke-security-group-ingress --group-id ${{ env.AWS_SG_ID }} --protocol tcp --port 22 --cidr ${{ env.ipv4 }}/32
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-2

@@ -1,0 +1,5 @@
+ALTER TABLE service_estimate_template
+DROP INDEX unique_service_estimate_template;
+
+ALTER TABLE service_estimate_template
+DROP COLUMN active_unique_key;
