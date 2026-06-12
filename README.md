@@ -42,7 +42,8 @@ flowchart LR
 - 검색은 벡터 DB에서 후보 ID만 얻고 원본은 MySQL에서 조회 — 정합성 기준은 운영 DB
 - 동기화는 관리자 수동 트리거 + 새벽 배치(임베딩 누락분 채움)로 구성, 실시간 반영·삭제 전파는 PoC 범위 밖
 
-자세한 코드는 PoC 브랜치의 `be/src/main/java/com/motd/be/module/member/portfolio_embedding/` 참고.
+PoC 변경분 전체는 [main...poc/pgvector-semantic-search 비교](../../compare/main...poc/pgvector-semantic-search)에서 한눈에 볼 수 있습니다.
+핵심 코드는 PoC 브랜치의 `src/main/java/com/motd/be/module/member/portfolio_embedding/` 참고.
 
 ## 레이어 구조
 
