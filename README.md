@@ -4,7 +4,7 @@
 실시간 채팅 · 견적 · 위치 기반 매칭 · LLM 기반 추천을 제공합니다.
 
 > 서비스는 출시 전 단계에서 정리되었고, 이 레포는 포트폴리오 공개용 스냅샷입니다.
-> 환경별 설정 파일(암호화된 값 포함)은 공개에서 제외했습니다.
+> 민감 설정값은 환경변수/GitHub Secrets로 분리했고, 공개 스냅샷에는 비밀값 없는 설정만 남겼습니다.
 
 ## 기술 스택
 
@@ -16,8 +16,8 @@ Java 17 · Spring Boot 3.5 · MySQL · Redis · WebSocket/STOMP · JPA/QueryDSL 
 
 AI 응답을 화면에 그대로 노출하면 백엔드가 추천 흐름을 제어할 수 없는 문제를, 구조화 JSON 출력 강제·파싱과 멀티턴 대화 컨텍스트 영속(텍스트+이미지)으로 해결했습니다. 정보가 부족하면 추가 질문을, 충분하면 디렉터 추천을 반환하는 분기 구조이며, AI 제공자는 `AiChatProvider` 인터페이스로 추상화해 모델 교체에 대비했습니다.
 
-- 대화방/메시지 영속: `module/member/prompt_room`, `module/member/prompt_message`
-- 추천/요청서 파이프라인: `module/member/director_recommendation`
+- 대화방/메시지 영속 + 추천/요청서 파이프라인: `module/member/prompt`
+- AI 제공자 추상화: `shared/ai/provider`
 
 ### 2. WebSocket/STOMP 실시간 채팅 + 다중 서버 확장 구조
 
