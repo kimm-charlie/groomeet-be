@@ -53,12 +53,12 @@ public class PromptFacade {
 
 	@Transactional
 	public PromptServiceRecommendResponse recommendServices(Long memberId, PromptServiceRecommendRequest request) {
+		// 프롬프트 검증
 		promptValidator.validatePrompt(request.getPrompt());
 
+		// 대화방 준비 (roomId 없으면 새 대화방·이력 없음, 있으면 소유권·턴수 검증 후 이전 대화 이력 로딩)
 		PromptRoom room;
 		List<PromptMessage> history;
-
-		// null 이라면, 새로운 대화방을 만들어야 한다. -> 기존 대화방이 없으므로, history 도 없다.
 		if (request.getRoomId() == null) {
 			Member member = memberQueryService.findById(memberId);
 			room = promptRoomCommandService.save(PromptRoom.builder().member(member).build());
@@ -70,16 +70,20 @@ public class PromptFacade {
 			history = promptMessageCommandService.findAllByRoom(room);
 		}
 
+		// 이미지 CDN URL·추천 후보 서비스·대화 컨텍스트 준비
 		List<String> cdnUrls = serviceRequestFileService.extractCdnUrls(memberId, request.getFileIds());
 		List<DirectorService> activeServices = directorServiceQueryService.findAllActiveChildServices();
 		List<Message> conversationHistory = buildConversationHistory(history, memberId);
 
+		// AI 추천 호출 (구조화 JSON 응답 파싱 포함)
 		PromptRecommendResult result = promptService.recommendServices(
 			request.getPrompt(), activeServices, cdnUrls, conversationHistory);
 
+		// 대화 턴 수 증가 + 사용자·AI 메시지 영속
 		room.incrementTurnCount();
 		saveMessages(room, request.getPrompt(), request.getFileIds(), result.getRawAiContent());
 
+		// 매칭 결과 분기 (정보 부족 → 추가 질문 / 충분 → 추천 목록)
 		AiRecommendResult parsedResult = result.getParsedResult();
 		room.updateServiceRecommendSuccess(parsedResult.isMatched());
 
@@ -96,18 +100,21 @@ public class PromptFacade {
 
 	@Transactional
 	public PromptGenerateResponse generateRequest(Long memberId, PromptGenerateRequest request) {
+		// 프롬프트 검증
 		promptValidator.validatePrompt(request.getPrompt());
 
+		// 디렉터 서비스 검증·조회
 		DirectorService directorService = directorServiceService.validateAndFindForRequest(
 			request.getDirectorServiceId());
 
+		// 요청 위치 검증 (조합·개수·혼합 타입)
 		List<Location> locations = locationQueryService.findAllByIds(request.getLocationIds());
 		locationValidator.validateCombinationAndSize(locations, request.getLocationIds());
 		locationValidator.validateForMixedType(locations);
 
+		// 대화방 준비 (기존이면 소유권 검증·이력 로딩, 신규면 생성) + 디렉터 서비스 연결
 		PromptRoom room;
 		List<PromptMessage> history;
-
 		if (request.getRoomId() != null) {
 			room = promptRoomCommandService.findById(request.getRoomId());
 			promptValidator.validateRoomOwnership(room, memberId);
@@ -120,12 +127,15 @@ public class PromptFacade {
 			history = List.of();
 		}
 
+		// 이미지 CDN URL·대화 컨텍스트 준비
 		List<String> cdnUrls = serviceRequestFileService.extractCdnUrls(memberId, request.getFileIds());
 		List<Message> conversationHistory = buildConversationHistory(history, memberId);
 
+		// AI 요청서 생성 호출
 		String aiContent = promptService.generateRequest(
 			request.getPrompt(), directorService, cdnUrls, conversationHistory);
 
+		// 대화 턴 수 증가 + 사용자·AI 메시지 영속
 		room.incrementTurnCount();
 		saveMessages(room, request.getPrompt(), request.getFileIds(), aiContent);
 
