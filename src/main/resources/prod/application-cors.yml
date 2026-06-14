@@ -1,4 +1,0 @@
-cors:
-  allowed:
-    origins: https://manotd.com, https://www.manotd.com, https://app.manotd.com, https://cert.mobile-ok.com, https://admin.manotd.com, https://www.groomeet.com, https://groomeet.com, https://admin.groomeet.com
-    patterns:

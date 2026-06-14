@@ -1,5 +1,0 @@
-spring:
-  flyway:
-    enabled: true       # flyway 활성화
-    baseline-on-migrate: true   # DB가 비어있지 않아도 baseline 잡고 시작
-    locations: classpath:db  # migration 파일 위치

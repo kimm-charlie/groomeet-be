@@ -1,7 +1,0 @@
-ai:
-  provider: sionic
-  sionic:
-    base-url: https://apis.opengateway.ai
-    api-key: ${SIONIC_API_KEY}
-    model: openai/gpt-5.2-2025-12-11
-    timeout-seconds: 60
