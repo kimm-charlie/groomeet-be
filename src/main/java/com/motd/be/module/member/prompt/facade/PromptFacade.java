@@ -31,6 +31,7 @@ import com.motd.be.module.member.prompt.service.PromptRoomCommandService;
 import com.motd.be.module.member.prompt.service.PromptService;
 import com.motd.be.module.member.prompt.validator.PromptValidator;
 import com.motd.be.module.member.service_request_file.service.ServiceRequestFileService;
+import com.motd.be.shared.ai.dto.request.AiChatCompletionRequest.Content;
 import com.motd.be.shared.ai.dto.request.AiChatCompletionRequest.Message;
 import com.motd.be.shared.ai.dto.response.AiRecommendResult;
 
@@ -177,10 +178,10 @@ public class PromptFacade {
 			return Message.ofText("user", content);
 		}
 
-		var contents = new ArrayList<com.motd.be.shared.ai.dto.request.AiChatCompletionRequest.Content>();
-		contents.add(com.motd.be.shared.ai.dto.request.AiChatCompletionRequest.Content.ofText(content));
+		List<Content> contents = new ArrayList<>();
+		contents.add(Content.ofText(content));
 		for (String cdnUrl : cdnUrls) {
-			contents.add(com.motd.be.shared.ai.dto.request.AiChatCompletionRequest.Content.ofImageUrl(cdnUrl));
+			contents.add(Content.ofImageUrl(cdnUrl));
 		}
 
 		return Message.ofMultiContent("user", contents);
